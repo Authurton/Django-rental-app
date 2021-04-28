@@ -1,1 +1,1 @@
-web: gunicorn roomza.wsgi
+web: gunicorn roomza.wsgi --log-file 
