@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+
+{% block title %} | SignUp {% endblock %}
+{% block content %}
+
+
+<section id="register" class="bg-light py-5">
+    
+        <div class="container">
+            
+          <div class="row">
+            <div class="col-md-6 mx-auto">
+              <div class="card">
+                <div class="card-header bg-primary text-white">
+                  <h4>
+                    <i class="fas fa-user-plus"></i> SignUp</h4>
+                </div>
+                <div class="card-body">
+                <!-- alerts -->
+                <!-- <div style='margin-left:20px; color:red'>
+                  {% if error %}
+                      <h4>{{error}}</h4>
+                  {% endif %}
+                </div> -->
+                {% include 'partials/_alerts.html'%}
+                <form action="{% url 'register'%}" method='POST'>
+                    {% csrf_token %}
+                    <div class="form-group">
+                    <label for="first_name">First Name</label>
+                    <input type="text" name="first_name" class="form-control" placeholder="First name" required>
+                </div>
+                <div class="form-group">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" name="last_name" class="form-control" placeholder="Last name" required>
+                </div>
+                <div class="form-group">
+                    <label for="username">Email</label>
+                    <input type="text" name="email" class="form-control" placeholder='email@gmail.com' required>
+                </div>
+                <!-- <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" class="form-control" required>
+                </div> -->
+                <div class="form-group">
+                    <label for="password2">Password</label>
+                    <input type="password" name="password" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Confirm Password</label>
+                    <input type="password" name="password2" class="form-control" required>
+                </div>
+                <!-- Default unchecked -->
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="landlord_checkbox" name="landlord">
+                  <label class="custom-control-label" for="landlord_checkbox">Have a room to rent out?</label>
+                </div>
+                <br>
+                <input type="submit" value="SignUp" class="btn btn-secondary btn-block">
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+{% endblock %}

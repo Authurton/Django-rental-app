@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+
+}
+header{
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    background-color:#03f0fc;
+}
+
+
+.nav_links li a{
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+    /* position: relative; */
+    /* margin-left: 200px; */
+    
+    
+    
+}
+
+.nav_links li a:hover{
+    color:yellow;
+}
+
+.nav_links{
+    list-style: none;
+
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0px 20px;
+    margin-bottom: 50px;
+
+}
+
+/* corousel */
+img {
+    height: 32rem;
+    width: auto;
+    object-fit: cover;
+    
+     }
+    
+
+#showcase .overlay {
+    content: '';
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    min-height: 100px;
+    width: 100%;
+    /* object-fit: contain; */
+    background: #03f0fc; }
+
+    #showcase .home-search {
+        min-height: 400px;
+        position: relative;
+        border-radius: 5px; }
+
+    #showcase-inner {
+        /* background: url(../img/building.jpg) no-repeat top center fixed/cover; */
+        position: relative;
+        overflow: hidden;
+        min-height: 100px; }
+        #showcase-inner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-height: 100%;
+            width: 100%;
+            background: rgba(32, 134, 107, 0.8); }
+        #showcase-inner.showcase-search {
+            min-height: 270px; }
+
+
+    
+
+    /* div, label { margin: 0; padding: 0; }
+    body{ margin: 20px; }
+    h1 { font-size: 1.5em; margin: 10px; } */
+    
+    /****** Style Star Rating Widget *****/
+    
+    /* .rating { 
+        border: none;
+        float: left;
+        text-align: center;
+    }
+    
+    .rating > input { display: none; } 
+    .rating > label:before { 
+        margin: 5px;
+        font-size: 1.25em;
+        font-family: FontAwesome;
+        display: inline-block;
+        content: "\f005";
+    }
+    
+    .rating > .half:before { 
+        content: "\f089";
+        position: absolute;
+    }
+    
+    .rating > label { 
+        color: #ddd; 
+        float: right;  
+        text-align: center;
+    } 
+     */
+    /***** CSS Magic to Highlight Stars on Hover *****/
+    
+    /* .rating > input:checked ~ label, show gold star when clicked */
+    /* .rating:not(:checked) > label:hover, hover current star */
+    /* .rating:not(:checked) > label:hover ~ label { color: #FFD700;  } hover previous stars in list */
+    
+    /* .rating > input:checked + label:hover, hover current star when changing rating */
+    /* .rating > input:checked ~ label:hover, */
+    /* .rating > label:hover ~ input:checked ~ label, lighten current selection */
+    /* .rating > input:checked ~ label:hover ~ label { color: #FFED85;  }  */

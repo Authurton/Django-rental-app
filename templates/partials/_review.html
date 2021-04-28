@@ -1,0 +1,130 @@
+
+<section class="team-section text-center my-5">
+
+    
+    <h2 class="h1-responsive font-weight-bold my-5">Testimonials:</h2> 
+   
+    <!-- <p class="dark-grey-text w-responsive mx-auto mb-5"><h3><strong>Read the comments below about this listing</strong></h3></p> -->
+  
+    <div class="container">
+    <div class="row" >
+      
+      
+      <div class="col-md-4 mb-md-0 mb-5">
+  
+        <div class="testimonial">
+        
+         
+         
+          {% for comment in listing.comments.all %}
+          
+            <h4 class="font-weight-bold dark-grey-text mt-4">{{comment.tenant}}</h4>
+            
+            
+            <p class="font-weight-normal dark-grey-text">
+            
+              <i class="fas fa-quote-left pr-2"></i>{{comment.text}}</p>
+            
+          
+         
+            <div class="orange-text">
+              <i class="fas fa-star"> </i>
+              <i class="fas fa-star"> </i>
+              <i class="fas fa-star"> </i>
+              <i class="fas fa-star"> </i>
+              <i class="fas fa-star-half-alt"> </i>           
+            </div>
+            <div class="row text-secondary pb-2">
+              <div class="col-6">
+                <i class="fas fa-clock"></i>{{comment.create_date}}</div>
+            </div>
+            {% empty %}
+              <p class="text-center" ><strong><h2>"No comments yet for this listing"</h2></strong></p>
+          
+              
+           
+          {% endfor %}
+          
+        </div>
+  
+      </div>
+      
+  
+    </div>
+    </div>
+  
+  </section> 
+ <!-- Section: Testimonials v.2 -->
+<!-- <section class="text-center my-5">
+  
+  <!-- Section heading -->
+  <!-- <h2 class="h1-responsive font-weight-bold my-5">Testimonials:</h2>
+  <div class="container-flex">
+    <div class="row justify-content-md-around">
+      
+        {% for comment in listing.comments.all %}
+        <div class="wrapper-carousel-fix">
+         
+          <div id="carousel-example-1" class="carousel no-flex testimonial-carousel slide carousel-fade" data-ride="carousel"
+            data-interval="false">
+            
+            <div class="carousel-inner" role="listbox">
+             
+              
+              <div class="carousel-item active">
+                <div class="testimonial">
+                 
+                  <div class="avatar mx-auto mb-4">
+                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" class="rounded-circle img-fluid"
+                      alt="First sample avatar image">
+                  </div>
+                  
+                  <p>
+                    <i class="fas fa-quote-left"></i> {{comment.text}}
+                  </p>
+                  <h4 class="font-weight-bold">{{comment.tenant}}</h4>
+                  <h6 class="font-weight-bold my-3">{{comment.create_date}}</h6>
+                  
+                  <i class="fas fa-star blue-text"> </i>
+                  <i class="fas fa-star blue-text"> </i>
+                  <i class="fas fa-star blue-text"> </i>
+                  <i class="fas fa-star blue-text"> </i>
+                  <i class="fas fa-star-half-alt blue-text"> </i>
+                </div>
+              </div>
+            
+              
+              
+              
+            </div>
+            
+           
+            {% if listing.comments.has_other_comments %}
+            
+                {% if listing.comments.has_previous %}
+                  <a class="carousel-control-prev left carousel-control" href="?page={{comments.previous_comment}}" role="button"
+                    data-slide="prev">
+                    <span class="icon-prev" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  {% endif %}
+                  <a class="carousel-control-next right carousel-control" href="?page={{comments.next_page_number}}" role="button"
+                    data-slide="next">
+                    <span class="icon-next" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                
+            {% endif %}
+           
+            {% empty %}
+            <p>No comments yet for this listing</p>
+          </div>
+         
+          
+        </div>
+        
+        {% endfor %}
+    
+    </div>
+  </div>
+</section> -->

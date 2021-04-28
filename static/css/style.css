@@ -1,0 +1,58 @@
+*{
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0; 
+    
+
+}
+header{
+    height: 20px;
+    display: flex;
+    position: fixed-top;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    background-color:#03f0fc;
+} 
+
+
+.nav_links li a{
+    transition: all 0.3s ease 0s;
+    text-decoration: none; 
+    /* position: absolute;  */
+    /* margin-left: 200px; */
+     /* float: left; */
+    
+    
+}
+
+.nav_links li a:hover{
+    color:yellow;
+}
+
+.nav_links{
+    list-style: none;
+
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0px 20px;
+    margin: 0 auto;
+
+} 
+
+/* corousel */
+img {
+    height: 500px;
+    width: 80px;
+
+     }
+#card{
+    background-color:blue;
+}
+
+
+
+      
+      

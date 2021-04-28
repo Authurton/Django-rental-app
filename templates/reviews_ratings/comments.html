@@ -1,0 +1,57 @@
+{% extends 'base.html'%}
+{%block title %}| Comment {% endblock%}
+
+{% block content %}
+
+<section>
+    {% include 'partials/_alerts.html' %}
+    <div class="card-body">
+        <form action="{% url 'create_comment' listing.id user.id %}" method='POST'>
+        {% csrf_token %}
+        {% include 'partials/_alerts.html'%}
+        <div class="form-group">
+            <label for="first_name">First_name:</label>
+            <input type="text" name="first_name" {% if user.is_authenticated %} value='{{ user.first_name }}'
+            {% endif %} required>
+        </div>
+        <div class="form-group">
+            <label for="last_name">Last_name:</label>
+            <input type="text" name="last_name" {% if user.is_authenticated %} value='{{ user.last_name }}'
+            {% endif %} required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" name='email' {% if user.is_authenticated %} value='{{ user.email }}'
+            {% endif %} required>
+            <div>
+                <label for="text">Add Comment:</label>
+                <textarea name="text" id="text" cols="70" rows="10"></textarea>
+                <!-- Message: <textarea name="CreateView" id="rating{{forloop.counter}}" value='{{rate.0}}'></textarea> -->
+            </div>
+            
+            <p>Rating:</p>
+            <div class="form-group">
+                <label for="rating">Kindly rate this listing:</label>
+                <select name="rating" id="rating">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+                <!-- {% for rate in RATING_CHOICES %}
+                <input type="radio" name='rating' id='rating{{forloop.counter}}' value='{{rate.0}}'>
+                <label for="choice{{forloop.counter}}">{{rate.1}} star{{ rate.0|pluralize }}</label>
+                <br>
+                {% endfor %}
+            </p> -->
+            <input type="submit" class="btn btn-secondary btn-block mt-4" value="Review">
+        </form>
+    </div>
+    
+    
+</section>
+
+
+{% endblock %}
