@@ -111,10 +111,6 @@ class User(AbstractBaseUser, PermissionsMixin):
 #     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default='user_user')
 #     parent_link = models.OneToOneField(User, primary_key = True, parent_link = True, on_delete=models.CASCADE)
 
-    
-
-
-
 class Landlord(User):
     user = models.OneToOneField(User, related_name='Landlord',parent_link=True, on_delete= models.CASCADE)
     # email = models.ForeignKey('self', on_delete = models.DO_NOTHING)

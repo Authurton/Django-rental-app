@@ -5,7 +5,10 @@
 
 {% block content %}
 
-{% include 'partials/_carousel.html'%}
+<div>
+  {% include 'partials/_carousel.html'%}
+</div>
+
   <section id="showcase">
     <div class="container text-center">
       <div class="home-search p-5">
@@ -81,7 +84,7 @@
               <img class="card-img-top" src="{{listing.photo_main.url}}" alt="listing">
               <div class="card-img-overlay">
                 <h2>
-                  <span class="badge badge-secondary text-white">${{listing.price}}</span>
+                  <span class="badge badge-secondary text-white">R{{listing.price}}</span>
                 </h2>
               </div>
               <div class="card-body">
@@ -122,6 +125,7 @@
                     <i class="fas fa-clock"></i>{{listing.list_date}}</div>
                 </div>
                 <hr>
+                
                   <a href="{% url 'listing' listing.id %}" class="btn btn-primary btn-block">View</a> 
               </div>
             </div>

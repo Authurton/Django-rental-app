@@ -42,7 +42,7 @@ def login_after(request):
                 else:
                         
                         # return redirect(reverse("land_diff", kwargs={"user_id":user.id}))
-                        return render(request, "accounts/final_dash.html")
+                        return render(request, "pages/index.html")
         else:
                 return HttpResponse(status=500)
 
@@ -178,7 +178,7 @@ def listing_dashboard(request, user_id):
                         email = request.POST["email"]
                         first_name = request.POST["first_name"]
                         last_name = request.POST["last_name"]
-                        photo_landlord = request.FILES["photo_landlord"]
+                        photo_landlord = request.FILES.get('photo_landlord')
 
                 
                 address = request.POST.get('address')

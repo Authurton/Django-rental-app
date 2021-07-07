@@ -39,7 +39,8 @@
       </div>
       <div class="form-group">
         <label for="photo_landlord">Insert Your Clear Photo Here:</label>
-        <input type="file" name="photo_landlord" {% if user.is_authenticated %} value="{{landlord.photo_landlord.url}}" {% endif %} class="form-control"  required>
+        <input type="file" name="photo_landlord" required>
+        <!-- <input type="file" name="photo_landlord" {% if user.is_authenticated %} value="{{landlord.photo_landlord.url}}" {% endif %} class="form-control"  required> -->
       </div>
       <input type="submit" value="Save" class="btn btn-secondary btn-block">
       <!-- <button class="btn btn-secondary btn-block mt-4" name="landlord_update" type="submit">Update</button> -->
