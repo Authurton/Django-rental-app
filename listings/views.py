@@ -80,5 +80,5 @@ def search(request):
         'listings': queryset_list,
         'values': request.GET
     }
-    return render(request, 'listings/search.html', context )
+    return render(request, 'pages/search.html', context )
     
