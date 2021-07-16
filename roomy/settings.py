@@ -1,14 +1,12 @@
 
 
 import os
-import django_heroku
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# dotenv_file = os.path.join(BASE_DIR, ".env")
-# if os.path.isfile(dotenv_file):
-#     dotenv.load_dotenv(dotenv_file)
+
 
 TEMPLATE_DIR = os.path.join(BASE_DIR,'roomy/templates')
 
@@ -156,6 +154,3 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
 
-django_heroku.settings(locals())
-
-# del DATABASES['default']['OPTIONS']['sslmode']
